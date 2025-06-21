@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrata a Nassim Wessin Hazim - Freelancer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #111 0%, #f4f4f6 100%);
+            color: #222;
+        }
+        nav {
+            background: #111;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        nav ul li a:hover {
+            color: #FFD600;
+            background: #222;
+        }
+        .hero {
+            min-height: 60vh;
+            margin: 3rem auto 2rem auto;
+            max-width: 700px;
+            background: #fff;
+            padding: 2.5rem 2rem 2rem 2rem;
+            border-radius: 22px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1.2rem;
+            border: 5px solid #FFD600;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+        }
+        .hero h1 {
+            margin-bottom: 0.5rem;
+            color: #111;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        .hero .subtitle {
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+        .location {
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .location i {
+            color: #FFD600;
+        }
+        .purpose {
+            background: #FFD600;
+            color: #111;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            display: inline-block;
+        }
+        .contact-btn {
+            display: inline-block;
+            margin: 2rem auto 0 auto;
+            padding: 0.75rem 2rem;
+            background: #111;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .contact-btn:hover {
+            background: #FFD600;
+            color: #111;
+        }
+        .services, .portfolio, .contact-form {
+            max-width: 700px;
+            margin: 2.5rem auto 0 auto;
+            background: #fff;
+            padding: 2.5rem 2rem 2rem 2rem;
+            border-radius: 22px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .services h2, .portfolio h2, .contact-form h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #111;
+        }
+        .portfolio-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            color: #24292e;
+            text-decoration: none;
+            font-weight: bold;
+            background: #f4f4f6;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+            margin-top: 0.5rem;
+        }
+        .portfolio-link i {
+            color: #24292e;
+        }
+        .portfolio-link:hover {
+            background: #FFD600;
+            color: #111;
+        }
+        .contact-form {
+            background: #f8f9fa;
+            margin-bottom: 2.5rem;
+        }
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+        }
+        .contact-form label {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            color: #222;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.7rem;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            font-size: 1rem;
+            resize: vertical;
+            background: #fff;
+            color: #222;
+        }
+        .contact-form button {
+            background: #111;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 0.75rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .contact-form button:hover {
+            background: #FFD600;
+            color: #111;
+        }
+        .form-horizontal .form-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .form-horizontal .form-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 120px;
+            min-width: 120px;
+        }
+        .form-horizontal .mensaje-group {
+            margin-top: 1rem;
+        }
+        .form-horizontal input,
+        .form-horizontal textarea {
+            padding: 0.5rem;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        @media (max-width: 700px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            .hero,
+            .portfolio,
+            .contact-form {
+                max-width: 98vw !important;
+                padding: 1.2rem 0.5rem !important;
+                margin: 1.2rem auto 0 auto !important;
+                border-radius: 12px !important;
+            }
+            .hero img,
+            .hero .subtitle span {
+                width: 90px !important;
+                font-size: 1rem !important;
+            }
+            .purpose {
+                font-size: 1rem !important;
+                padding: 1rem !important;
+            }
+            .form-horizontal .form-row {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+            .portfolio-link {
+                font-size: 1rem !important;
+                padding: 0.4rem 0.7rem !important;
+            }
+            .hero img[alt="Stack de Tecnologías"] {
+                max-width: 180px !important;
+                margin: 1rem auto 0.5rem auto !important;
+                padding: 0.3rem !important;
+            }
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(135deg, #111 0%, #444 100%);">
+    <section class="hero" style="background: #181818; color: #fff; box-shadow: 0 6px 32px rgba(0,0,0,0.18);">
+        <img src="img/nass.jpeg" alt="Nassim Wessin Hazim" style="border: 4px solid #FFD600; width: 120px; height: 120px; margin-bottom: 1rem;">
+        <h1 style="font-size:2.3rem; font-weight:800; color:#FFD600; margin-bottom:0.3rem; letter-spacing:1px;">Nassim Wessin Hazim</h1>
+        <div class="subtitle" style="color:#fff; font-size:1.15rem; margin-bottom:0.7rem;">
+            <span style="background:#FFD600; color:#181818; padding:0.2rem 0.8rem; border-radius:8px; font-weight:700;">
+                Fullstack Developer & Diseñador Freelancer
+            </span>
+        </div>
+        <div class="location" style="color:#bbb; margin-bottom:0.7rem;">
+            <i class="fas fa-map-marker-alt" style="color:#FFD600;"></i> Santo Domingo, RD
+        </div>
+        <div class="purpose" style="background:rgba(255,255,255,0.08); color:#fff; border-left:6px solid #FFD600; padding:1.2rem 1.5rem; border-radius:14px; font-size:1.13rem; font-weight:500; margin-bottom:1.2rem; box-shadow:0 2px 12px rgba(0,0,0,0.10); max-width: 480px;">
+            <span style="font-size:1.25rem; color:#FFD600; font-weight:700;">¿Buscas talento para tu proyecto?</span><br>
+            Soy <b style="color:#FFD600;">Fullstack Developer</b> con experiencia en tecnologías modernas.<br>
+            <span style="color:#FFD600;">Desarrollo web, apps, APIs y soluciones a medida.</span><br>
+            <span style="color:#fff;">¡Disponible para trabajar como freelancer!</span>
+        </div>
+        <div style="width:100%; display:flex; justify-content:center;">
+            <img src="img/tegnologias.jpeg" alt="Stack de Tecnologías"
+                style="display:block; max-width:320px; width:100%; height:auto; margin:1.2rem auto 0.7rem auto; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.18); background:#fff; padding:0.5rem; object-fit:contain;">
+        </div>
+        <a href="#contacto" class="contact-btn"
+            style="background:#FFD600; color:#181818; font-weight:700; border:none; border-radius:25px; font-size:1.13rem; padding:0.8rem 2.2rem; margin-top:1.2rem; box-shadow:0 2px 8px rgba(0,0,0,0.13); text-decoration:none; transition:background 0.2s, color 0.2s;">
+            <i class="fas fa-paper-plane"></i> ¡Quiero contratarte!
+        </a>
+        <button id="show-cert-btn" style="background:#FFD600; color:#181818; font-weight:700; border:none; border-radius:25px; font-size:1.13rem; padding:0.8rem 2.2rem; margin-top:1.2rem; box-shadow:0 2px 8px rgba(0,0,0,0.13); text-decoration:none; transition:background 0.2s, color 0.2s; cursor:pointer;">
+            <i class="fas fa-certificate"></i> Ver Certificación
+        </button>
+        <div id="cert-section" style="display:none; margin-top:1.2rem; text-align:center;">
+            <img id="cert-img" src="img/certificacion.png" alt="Certificado Henry Full Stack"
+                 style="max-width:95vw; width:600px; height:auto; border-radius:18px; box-shadow:0 2px 24px rgba(0,0,0,0.25); background:#fff; padding:0.7rem; border:4px solid #FFD600;">
+            <div style="color:#fff; margin-top:0.7rem; font-weight:600; font-size:1.15rem;">Certificado Desarrollo Web Full Stack - Henry</div>
+        </div>
+    </section>
+    <main>
+        <section class="portfolio" style="background:#181818; color:#fff; box-shadow: 0 4px 24px rgba(0,0,0,0.10); border-radius:22px;">
+            <h2>
+                <i class="fas fa-folder-open" style="color:#FFD600;"></i>
+                <span style="color:#fff;"> Portafolio</span>
+            </h2>
+            <p style="color:#eee;">Revisa algunos de mis proyectos y colaboraciones en GitHub:</p>
+            <a class="portfolio-link" href="https://github.com/Nass10000" target="_blank"
+                style="background:#222; color:#FFD600; border:1px solid #FFD600;">
+                <i class="fab fa-github"></i> github.com/Nass10000
+            </a>
+        </section>
+        <section class="contact-form" id="contacto" style="background:#181818; color:#fff; box-shadow: 0 4px 24px rgba(0,0,0,0.10); border-radius:22px;">
+            <h2 style="color:#FFD600;">Contáctame para trabajar juntos</h2>
+            <form class="form-horizontal">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre" style="color:#FFD600;">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required style="background:#222; color:#fff; border:1px solid #FFD600;">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono" style="color:#FFD600;">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" style="background:#222; color:#fff; border:1px solid #FFD600;">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo" style="color:#FFD600;">Correo</label>
+                        <input type="email" id="correo" name="correo" required style="background:#222; color:#fff; border:1px solid #FFD600;">
+                    </div>
+                </div>
+                <div class="form-group mensaje-group">
+                    <label for="mensaje" style="color:#FFD600;">¿En qué puedo ayudarte?</label>
+                    <textarea id="mensaje" name="mensaje" rows="2" required placeholder="Cuéntame sobre tu proyecto, idea o necesidad..." style="background:#222; color:#fff; border:1px solid #FFD600;"></textarea>
+                </div>
+                <button type="submit" style="background:#FFD600; color:#181818; font-weight:700; border:none; border-radius:25px; font-size:1.13rem; padding:0.8rem 2.2rem; margin-top:1.2rem; box-shadow:0 2px 8px rgba(0,0,0,0.13); text-decoration:none; transition:background 0.2s, color 0.2s;">
+                    Enviar mensaje
+                </button>
+            </form>
+        </section>
+    </main>
+    <script>
+    // Desplazar al formulario al hacer click en el botón principal
+    document.querySelector('.contact-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Envío del formulario
+    document.querySelector('.contact-form form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Validaciones
+        const nombre = document.getElementById('nombre').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const correo = document.getElementById('correo').value.trim();
+        const mensaje = document.getElementById('mensaje').value.trim();
+
+        if (nombre.length < 2 || nombre.length > 100) {
+            alert('El nombre debe tener entre 2 y 100 caracteres.');
+            return;
+        }
+        if (telefono.length > 30) {
+            alert('El teléfono no debe superar los 30 caracteres.');
+            return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo) || correo.length > 100) {
+            alert('Correo inválido o demasiado largo.');
+            return;
+        }
+        if (mensaje.length < 5 || mensaje.length > 1000) {
+            alert('El mensaje debe tener entre 5 y 1000 caracteres.');
+            return;
+        }
+
+        const data = { nombre, telefono, correo, mensaje };
+
+        const res = await fetch('http://localhost:3001/api/contacto', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (res.ok) {
+            alert('¡Mensaje enviado correctamente! Te responderé pronto.');
+            this.reset();
+        } else {
+            alert('Hubo un error al enviar el mensaje.');
+        }
+    });
+
+    document.getElementById('show-cert-btn').addEventListener('click', function() {
+        const cert = document.getElementById('cert-section');
+        cert.style.display = 'block';
+        this.disabled = true;
+        // Centrar la pantalla en la certificación
+        cert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+            cert.style.display = 'none';
+            this.disabled = false;
+        }, 30000); // 30 segundos
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Ignorar dependencias de Node.js
+backend/node_modules/
+
+# Ignorar archivos de entorno
+backend/.env
+
+# Ignorar logs
+*.log
+
+# Ignorar archivos del sistema
+.DS_Store
