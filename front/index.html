@@ -359,7 +359,7 @@
 
         const data = { nombre, telefono, correo, mensaje };
 
-        const res = await fetch('http://localhost:3001/api/contacto', {
+        const res = await fetch('https://webpersonal-k04h.onrender.com/api/contacto', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
