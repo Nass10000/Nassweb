@@ -84,14 +84,58 @@
         }
         .purpose {
             background: #FFD600;
-            color: #111;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
+            color: #181818;
+            border-radius: 14px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
             font-size: 1.15rem;
             font-weight: 500;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            display: inline-block;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            max-width: 520px;
+            font-family: 'Segoe UI', 'Montserrat', 'Arial', sans-serif;
+            letter-spacing: 0.01em;
+            line-height: 1.7;
+        }
+        .purpose span {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+        }
+        .purpose span i {
+            font-size: 1.4rem;
+            margin-right: 10px;
+            color: #181818;
+        }
+        .purpose ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.1rem 0;
+        }
+        .purpose ul li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .purpose ul li i {
+            color: #181818;
+            margin-right: 10px;
+            font-size: 1.15rem;
+        }
+        .purpose ul li span {
+            font-weight: 600;
+        }
+        .purpose div {
+            display: flex;
+            align-items: center;
+            font-size: 1.08rem;
+            font-weight: 500;
+        }
+        .purpose div i {
+            color: #181818;
+            margin-right: 10px;
+            font-size: 1.15rem;
         }
         .contact-btn {
             display: inline-block;
@@ -261,11 +305,37 @@
         <div class="location" style="color:#bbb; margin-bottom:0.7rem;">
             <i class="fas fa-map-marker-alt" style="color:#FFD600;"></i> Santo Domingo, RD
         </div>
-        <div class="purpose" style="background:rgba(255,255,255,0.08); color:#fff; border-left:6px solid #FFD600; padding:1.2rem 1.5rem; border-radius:14px; font-size:1.13rem; font-weight:500; margin-bottom:1.2rem; box-shadow:0 2px 12px rgba(0,0,0,0.10); max-width: 480px;">
-            <span style="font-size:1.25rem; color:#FFD600; font-weight:700;">¿Buscas talento para tu proyecto?</span><br>
-            Soy <b style="color:#FFD600;">Fullstack Developer</b> con experiencia en tecnologías modernas.<br>
-            <span style="color:#FFD600;">Desarrollo web, apps, APIs y soluciones a medida.</span><br>
-            <span style="color:#fff;">¡Disponible para trabajar como freelancer!</span>
+        <div class="purpose" style="background:#FFD600; color:#181818; border-radius:14px; padding:1.5rem 2rem; margin-bottom:1.5rem; font-size:1.15rem; font-weight:500; box-shadow:0 2px 12px rgba(0,0,0,0.10); max-width: 520px; font-family:'Segoe UI', 'Montserrat', 'Arial', sans-serif; letter-spacing:0.01em; line-height:1.7;">
+            <span style="display:flex; align-items:center; font-size:1.25rem; font-weight:700; margin-bottom:0.7rem;">
+                <i class="fas fa-lightbulb" style="font-size:1.4rem; margin-right:10px; color:#181818;"></i>
+                ¿Necesitas una página web o un sistema a medida y no sabes por dónde empezar?
+            </span>
+            <span style="font-size:1.07rem; font-weight:400; display:block; margin-bottom:1.1rem;">
+                Soy <b style="font-weight:700;">desarrollador web full stack</b> y me encargo de todo el proceso, desde la parte visual hasta la lógica interna que hace que todo funcione.
+            </span>
+            <ul style="list-style:none; padding:0; margin:0 0 1.1rem 0;">
+                <li style="margin-bottom:0.5rem; display:flex; align-items:center;">
+                    <i class="fas fa-bolt" style="color:#181818; margin-right:10px; font-size:1.15rem;"></i>
+                    <span style="font-weight:600;">Páginas rápidas y modernas</span>
+                </li>
+                <li style="margin-bottom:0.5rem; display:flex; align-items:center;">
+                    <i class="fas fa-cogs" style="color:#181818; margin-right:10px; font-size:1.15rem;"></i>
+                    <span style="font-weight:600;">Sistemas personalizados</span>
+                </li>
+                <li style="margin-bottom:0.5rem; display:flex; align-items:center;">
+                    <i class="fas fa-shield-alt" style="color:#181818; margin-right:10px; font-size:1.15rem;"></i>
+                    <span style="font-weight:600;">Seguridad y buen rendimiento garantizado</span>
+                </li>
+                <li style="margin-bottom:0.5rem; display:flex; align-items:center;">
+                    <i class="fas fa-handshake" style="color:#181818; margin-right:10px; font-size:1.15rem;"></i>
+                    <span style="font-weight:600;">Asesoría sin tecnicismos</span>
+                    <span style="font-weight:400; margin-left:6px; color:#444;">clara y honesta</span>
+                </li>
+            </ul>
+            <div style="display:flex; align-items:center; font-size:1.08rem; font-weight:500;">
+                <i class="fas fa-envelope-open-text" style="color:#181818; margin-right:10px; font-size:1.15rem;"></i>
+                Escríbeme y cuéntame lo que necesitas, aunque no sepas explicarlo con palabras técnicas. <b style="font-weight:700;">¡Yo me encargo!</b>
+            </div>
         </div>
         <div style="width:100%; display:flex; justify-content:center;">
             <img src="img/tegnologias.jpeg" alt="Stack de Tecnologías"
