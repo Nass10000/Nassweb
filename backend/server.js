@@ -9,7 +9,8 @@ const PORT = 3001;
 
 // Configura la conexión a PostgreSQL
 const pool = new Pool({
-    connectionString: process.env.PG_URI // Agrega esta variable en tu .env
+    connectionString: process.env.PG_URI,
+    ssl: { rejectUnauthorized: false }
 });
 
 app.use(cors());
