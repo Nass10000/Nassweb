@@ -6,15 +6,27 @@
     <title>Contrata a Nassim Wessin Hazim - Freelancer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        body {
+        :root {
+            --main-yellow: #FFD600;
+            --main-yellow-light: #ffef8e;
+            --main-dark: #181818;
+            --main-bg: linear-gradient(135deg, #111 0%, #444 100%);
+            --main-white: #fff;
+            --main-gray: #f8f9fa;
+            --main-shadow: 0 4px 24px rgba(0,0,0,0.13);
+            --radius: 22px;
+        }
+        html, body {
+            min-height: 100%;
+            background: var(--main-bg);
+            color: var(--main-white);
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            background: linear-gradient(135deg, #111 0%, #f4f4f6 100%);
-            color: #222;
+            padding: 0;
         }
         nav {
-            background: #111;
-            color: #fff;
+            background: var(--main-dark);
+            color: var(--main-white);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,62 +41,76 @@
             padding: 0;
         }
         nav ul li a {
-            color: #fff;
+            color: var(--main-white);
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.2s;
+            transition: color 0.2s, background 0.2s;
             padding: 0.5rem 1rem;
             border-radius: 8px;
         }
         nav ul li a:hover {
-            color: #FFD600;
+            color: var(--main-yellow);
             background: #222;
         }
-        .hero {
-            min-height: 60vh;
-            margin: 3rem auto 2rem auto;
+        main {
+            width: 100%;
+            min-height: 100vh;
+        }
+        .hero, .portfolio, .contact-form {
             max-width: 700px;
-            background: #fff;
+            margin: 2.5rem auto 0 auto;
+            background: var(--main-dark);
             padding: 2.5rem 2rem 2rem 2rem;
-            border-radius: 22px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            border-radius: var(--radius);
+            box-shadow: var(--main-shadow);
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
+        }
+        .hero {
+            background: linear-gradient(135deg, #181818 60%, #FFD600 100%);
+            color: var(--main-white);
+            margin-top: 3rem;
             position: relative;
         }
         .hero img {
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
             object-fit: cover;
             border-radius: 50%;
             margin-bottom: 1.2rem;
-            border: 5px solid #FFD600;
+            border: 5px solid var(--main-yellow);
             box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            background: var(--main-white);
         }
         .hero h1 {
             margin-bottom: 0.5rem;
-            color: #111;
-            font-size: 2.2rem;
-            font-weight: 700;
+            color: var(--main-yellow);
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
         .hero .subtitle {
-            color: #555;
-            font-size: 1.2rem;
-            margin-bottom: 1.2rem;
+            color: var(--main-dark);
+            font-size: 1.15rem;
+            margin-bottom: 0.7rem;
+            background: var(--main-yellow);
+            padding: 0.2rem 0.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
         }
         .location {
-            color: #555;
-            margin-bottom: 1rem;
+            color: #bbb;
+            margin-bottom: 0.7rem;
             font-size: 1.1rem;
         }
         .location i {
-            color: #FFD600;
+            color: var(--main-yellow);
         }
         .purpose {
-            background: #FFD600;
-            color: #181818;
+            background: var(--main-yellow);
+            color: var(--main-dark);
             border-radius: 14px;
             padding: 1.5rem 2rem;
             margin-bottom: 1.5rem;
@@ -106,7 +132,7 @@
         .purpose span i {
             font-size: 1.4rem;
             margin-right: 10px;
-            color: #181818;
+            color: var(--main-dark);
         }
         .purpose ul {
             list-style: none;
@@ -119,7 +145,7 @@
             align-items: center;
         }
         .purpose ul li i {
-            color: #181818;
+            color: var(--main-dark);
             margin-right: 10px;
             font-size: 1.15rem;
         }
@@ -133,105 +159,136 @@
             font-weight: 500;
         }
         .purpose div i {
-            color: #181818;
+            color: var(--main-dark);
             margin-right: 10px;
             font-size: 1.15rem;
         }
-        .contact-btn {
+        .contact-btn, #show-cert-btn {
             display: inline-block;
             margin: 2rem auto 0 auto;
             padding: 0.75rem 2rem;
-            background: #111;
-            color: #fff;
+            background: linear-gradient(90deg, var(--main-yellow) 0%, var(--main-yellow-light) 100%);
+            color: var(--main-dark);
             border: none;
             border-radius: 25px;
-            font-size: 1.1rem;
+            font-size: 1.13rem;
+            font-weight: 700;
             cursor: pointer;
             text-decoration: none;
-            transition: background 0.2s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+            transition: background 0.2s, color 0.2s, transform 0.2s;
         }
-        .contact-btn:hover {
-            background: #FFD600;
-            color: #111;
+        .contact-btn:hover, #show-cert-btn:hover {
+            background: linear-gradient(90deg, var(--main-yellow-light) 0%, var(--main-yellow) 100%);
+            color: var(--main-dark);
+            transform: scale(1.04);
         }
-        .services, .portfolio, .contact-form {
-            max-width: 700px;
-            margin: 2.5rem auto 0 auto;
-            background: #fff;
-            padding: 2.5rem 2rem 2rem 2rem;
-            border-radius: 22px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .services h2, .portfolio h2, .contact-form h2 {
+        #cert-section {
+            display: none;
+            margin-top: 1.2rem;
             text-align: center;
-            margin-bottom: 1.5rem;
-            color: #111;
+        }
+        #cert-img {
+            max-width: 95vw;
+            width: 600px;
+            height: auto;
+            border-radius: 18px;
+            box-shadow: 0 2px 24px rgba(0,0,0,0.25);
+            background: var(--main-white);
+            padding: 0.7rem;
+            border: 4px solid var(--main-yellow);
+        }
+        .portfolio {
+            background: linear-gradient(135deg, #181818 60%, #FFD600 100%);
+            color: #fff;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+            border-radius: 22px;
+        }
+        .portfolio h2 {
+            color: #FFD600;
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
         }
         .portfolio-link {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            font-size: 1.1rem;
-            color: #24292e;
+            font-size: 1.15rem;
+            color: var(--main-dark);
             text-decoration: none;
             font-weight: bold;
-            background: #f4f4f6;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: background 0.2s, color 0.2s;
+            background: linear-gradient(90deg, #FFD600 0%, #ffef8e 100%);
+            padding: 0.5rem 1.2rem;
+            border-radius: 12px;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
             margin-top: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.13);
         }
         .portfolio-link i {
-            color: #24292e;
+            color: var(--main-dark);
         }
         .portfolio-link:hover {
-            background: #FFD600;
-            color: #111;
+            background: linear-gradient(90deg, var(--main-yellow-light) 0%, var(--main-yellow) 100%);
+            color: var(--main-dark);
+            transform: translateY(-2px) scale(1.04);
         }
         .contact-form {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #181818 60%, #FFD600 100%);
+            color: var(--main-white);
             margin-bottom: 2.5rem;
+        }
+        .contact-form h2 {
+            color: var(--main-yellow);
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
         }
         .contact-form form {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             width: 100%;
+            backdrop-filter: blur(2px);
         }
         .contact-form label {
             font-weight: bold;
             margin-bottom: 0.3rem;
-            color: #222;
+            color: var(--main-yellow);
         }
         .contact-form input,
         .contact-form textarea {
             padding: 0.7rem;
-            border: 1px solid #bbb;
-            border-radius: 6px;
+            border: 2px solid var(--main-yellow);
+            border-radius: 8px;
             font-size: 1rem;
             resize: vertical;
-            background: #fff;
-            color: #222;
+            background: rgba(34,34,34,0.95);
+            color: var(--main-white);
+            transition: border 0.2s, background 0.2s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border: 2.5px solid var(--main-white);
+            background: #222;
         }
         .contact-form button {
-            background: #111;
-            color: #fff;
+            background: linear-gradient(90deg, var(--main-yellow) 0%, var(--main-yellow-light) 100%);
+            color: var(--main-dark);
+            font-weight: 700;
             border: none;
             border-radius: 25px;
-            padding: 0.75rem 2rem;
-            font-size: 1.1rem;
-            cursor: pointer;
-            margin-top: 1rem;
-            transition: background 0.2s, color 0.2s;
+            font-size: 1.13rem;
+            padding: 0.8rem 2.2rem;
+            margin-top: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
         }
-        .contact-form button:hover {
-            background: #FFD600;
-            color: #111;
+        .contact-form button:active {
+            transform: scale(0.97);
         }
         .form-horizontal .form-row {
             display: flex;
@@ -247,12 +304,11 @@
         .form-horizontal .mensaje-group {
             margin-top: 1rem;
         }
-        .form-horizontal input,
-        .form-horizontal textarea {
-            padding: 0.5rem;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-            font-size: 1rem;
+        #form-feedback {
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.08rem;
+            display: none;
         }
         @media (max-width: 700px) {
             nav ul {
@@ -285,114 +341,130 @@
                 font-size: 1rem !important;
                 padding: 0.4rem 0.7rem !important;
             }
-            .hero img[alt="Stack de Tecnologías"] {
-                max-width: 180px !important;
-                margin: 1rem auto 0.5rem auto !important;
-                padding: 0.3rem !important;
+            #cert-img {
+                width: 98vw !important;
+                max-width: 98vw !important;
             }
         }
     </style>
 </head>
-<body style="background: linear-gradient(135deg, #111 0%, #444 100%);">
-    <section class="hero" style="background: #181818; color: #fff; box-shadow: 0 6px 32px rgba(0,0,0,0.18);">
-        <img src="img/nass.jpeg" alt="Nassim Wessin Hazim" style="border: 4px solid #FFD600; width: 120px; height: 120px; margin-bottom: 1rem;">
-        <h1 style="font-size:2.3rem; font-weight:800; color:#FFD600; margin-bottom:0.3rem; letter-spacing:1px;">Nassim Wessin Hazim</h1>
-        <div class="subtitle" style="color:#fff; font-size:1.15rem; margin-bottom:0.7rem;">
-            <span style="background:#FFD600; color:#181818; padding:0.2rem 0.8rem; border-radius:8px; font-weight:700;">
-                Fullstack Developer & Diseñador Freelancer
-            </span>
-        </div>
-        <div class="location" style="color:#bbb; margin-bottom:0.7rem;">
-            <i class="fas fa-map-marker-alt" style="color:#FFD600;"></i> Santo Domingo, RD
-        </div>
-        <div class="purpose" style="background:#FFD600; color:#181818; border-radius:14px; padding:1.5rem 2rem; margin-bottom:1.5rem; font-size:1.15rem; font-weight:500; box-shadow:0 2px 12px rgba(0,0,0,0.10); max-width: 520px; font-family:'Segoe UI', 'Montserrat', 'Arial', sans-serif; letter-spacing:0.01em; line-height:1.7;">
-            <span style="display:flex; align-items:center; font-size:1.25rem; font-weight:700; margin-bottom:0.7rem;">
-                <i class="fas fa-lightbulb" style="font-size:1.4rem; margin-right:10px; color:#181818;"></i>
-                ¿Necesitas una página web o un sistema a medida y no sabes por dónde empezar?
-            </span>
-            <span style="font-size:1.07rem; font-weight:400; display:block; margin-bottom:1.1rem;">
-                Soy <b style="font-weight:700;">desarrollador web full stack</b> y me encargo de todo el proceso, desde la parte visual hasta la lógica interna que hace que todo funcione.
-            </span>
-            <ul style="list-style:none; padding:0; margin:0 0 1.1rem 0;">
-                <li style="margin-bottom:0.5rem; display:flex; align-items:center;">
-                    <i class="fas fa-bolt" style="color:#181818; margin-right:10px; font-size:1.15rem;"></i>
-                    <span style="font-weight:600;">Páginas rápidas y modernas</span>
-                </li>
-                <li style="margin-bottom:0.5rem; display:flex; align-items:center;">
-                    <i class="fas fa-cogs" style="color:#181818; margin-right:10px; font-size:1.15rem;"></i>
-                    <span style="font-weight:600;">Sistemas personalizados</span>
-                </li>
-                <li style="margin-bottom:0.5rem; display:flex; align-items:center;">
-                    <i class="fas fa-shield-alt" style="color:#181818; margin-right:10px; font-size:1.15rem;"></i>
-                    <span style="font-weight:600;">Seguridad y buen rendimiento garantizado</span>
-                </li>
-                <li style="margin-bottom:0.5rem; display:flex; align-items:center;">
-                    <i class="fas fa-handshake" style="color:#181818; margin-right:10px; font-size:1.15rem;"></i>
-                    <span style="font-weight:600;">Asesoría sin tecnicismos</span>
-                    <span style="font-weight:400; margin-left:6px; color:#444;">clara y honesta</span>
-                </li>
-            </ul>
-            <div style="display:flex; align-items:center; font-size:1.08rem; font-weight:500;">
-                <i class="fas fa-envelope-open-text" style="color:#181818; margin-right:10px; font-size:1.15rem;"></i>
-                Escríbeme y cuéntame lo que necesitas, aunque no sepas explicarlo con palabras técnicas. <b style="font-weight:700;">¡Yo me encargo!</b>
-            </div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center;">
-            <img src="img/tegnologias.jpeg" alt="Stack de Tecnologías"
-                style="display:block; max-width:320px; width:100%; height:auto; margin:1.2rem auto 0.7rem auto; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.18); background:#fff; padding:0.5rem; object-fit:contain;">
-        </div>
-        <a href="#contacto" class="contact-btn"
-            style="background:#FFD600; color:#181818; font-weight:700; border:none; border-radius:25px; font-size:1.13rem; padding:0.8rem 2.2rem; margin-top:1.2rem; box-shadow:0 2px 8px rgba(0,0,0,0.13); text-decoration:none; transition:background 0.2s, color 0.2s;">
-            <i class="fas fa-paper-plane"></i> ¡Quiero contratarte!
-        </a>
-        <button id="show-cert-btn" style="background:#FFD600; color:#181818; font-weight:700; border:none; border-radius:25px; font-size:1.13rem; padding:0.8rem 2.2rem; margin-top:1.2rem; box-shadow:0 2px 8px rgba(0,0,0,0.13); text-decoration:none; transition:background 0.2s, color 0.2s; cursor:pointer;">
-            <i class="fas fa-certificate"></i> Ver Certificación
-        </button>
-        <div id="cert-section" style="display:none; margin-top:1.2rem; text-align:center;">
-            <img id="cert-img" src="img/certificacion.png" alt="Certificado Henry Full Stack"
-                 style="max-width:95vw; width:600px; height:auto; border-radius:18px; box-shadow:0 2px 24px rgba(0,0,0,0.25); background:#fff; padding:0.7rem; border:4px solid #FFD600;">
-            <div style="color:#fff; margin-top:0.7rem; font-weight:600; font-size:1.15rem;">Certificado Desarrollo Web Full Stack - Henry</div>
-        </div>
-    </section>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+            <li><a href="#portfolio"><i class="fab fa-github"></i> Portafolio</a></li>
+            <li><a href="#cert-section"><i class="fas fa-certificate"></i> Certificación</a></li>
+        </ul>
+    </nav>
     <main>
-        <section class="portfolio" style="background:#181818; color:#fff; box-shadow: 0 4px 24px rgba(0,0,0,0.10); border-radius:22px;">
-            <h2>
-                <i class="fas fa-folder-open" style="color:#FFD600;"></i>
-                <span style="color:#fff;"> Portafolio</span>
+        <section class="hero">
+            <img src="img/nass.jpeg" alt="Nassim Wessin Hazim">
+            <h1>Nassim Wessin Hazim</h1>
+            <div class="subtitle">
+                Fullstack Developer & Diseñador Freelancer
+            </div>
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i> Santo Domingo, RD
+            </div>
+            <div class="purpose">
+                <span>
+                    <i class="fas fa-lightbulb"></i>
+                    ¿Necesitas una página web o un sistema a medida y no sabes por dónde empezar?
+                </span>
+                <span style="font-size:1.07rem; font-weight:400; display:block; margin-bottom:1.1rem;">
+                    Soy <b style="font-weight:700;">desarrollador web full stack</b> y me encargo de todo el proceso, desde la parte visual hasta la lógica interna que hace que todo funcione.
+                </span>
+                <ul>
+                    <li>
+                        <i class="fas fa-bolt"></i>
+                        <span>Páginas rápidas y modernas</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-cogs"></i>
+                        <span>Sistemas personalizados</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Seguridad y buen rendimiento garantizado</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-handshake"></i>
+                        <span>Asesoría sin tecnicismos</span>
+                        <span style="font-weight:400; margin-left:6px; color:#444;">clara y honesta</span>
+                    </li>
+                </ul>
+                <div>
+                    <i class="fas fa-envelope-open-text"></i>
+                    Escríbeme y cuéntame lo que necesitas, aunque no sepas explicarlo con palabras técnicas. <b style="font-weight:700;">¡Yo me encargo!</b>
+                </div>
+            </div>
+            <div style="width:100%; display:flex; flex-direction:column; align-items:center; margin-top:1.5rem;">
+                <h3 style="
+                    color: #181818;
+                    background: linear-gradient(90deg, #FFD600 0%, #ffef8e 100%);
+                    font-size: 1.45rem;
+                    font-weight: 800;
+                    letter-spacing: 1px;
+                    border-radius: 14px;
+                    padding: 0.6rem 2.2rem;
+                    margin-bottom: 0.7rem;
+                    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+                    text-shadow: 0 2px 8px #fff7;
+                    display: inline-block;
+                    ">
+                    <i class="fas fa-laptop-code" style="margin-right:10px; color:#181818;"></i>
+                    Tecnologías que uso
+                </h3>
+                <img src="img/tegnologias.jpeg" alt="Stack de Tecnologías"
+                    style="display:block; max-width:320px; width:100%; height:auto; margin:0 auto 0.7rem auto; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.18); background:#fff; padding:0.5rem; object-fit:contain;">
+            </div>
+            <a href="#contacto" class="contact-btn">
+                <i class="fas fa-paper-plane"></i> ¡Quiero contratarte!
+            </a>
+            <button id="show-cert-btn">
+                <i class="fas fa-certificate"></i> Ver Certificación
+            </button>
+            <div id="cert-section">
+                <img id="cert-img" src="img/certificacion.png" alt="Certificado Henry Full Stack">
+                <div style="color:#fff; margin-top:0.7rem; font-weight:600; font-size:1.15rem;">Certificado Desarrollo Web Full Stack - Henry</div>
+            </div>
+        </section>
+        <section class="portfolio" id="portfolio" style="background: linear-gradient(135deg, #181818 60%, #FFD600 100%); color: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.13); border-radius: 22px;">
+            <h2 style="color: #FFD600; font-size: 2rem; margin-bottom: 1.2rem; letter-spacing: 1px;">
+                <i class="fas fa-folder-open"></i> Portafolio
             </h2>
-            <p style="color:#eee;">Revisa algunos de mis proyectos y colaboraciones en GitHub:</p>
+            <p style="color:#eee; font-size: 1.1rem;">Revisa algunos de mis proyectos y colaboraciones en GitHub:</p>
             <a class="portfolio-link" href="https://github.com/Nass10000" target="_blank"
-                style="background:#222; color:#FFD600; border:1px solid #FFD600;">
+                style="background: linear-gradient(90deg, #FFD600 0%, #ffef8e 100%); color: #181818; border: none; font-weight: 700; font-size: 1.15rem; box-shadow: 0 2px 8px rgba(0,0,0,0.13); transition: transform 0.2s;">
                 <i class="fab fa-github"></i> github.com/Nass10000
             </a>
         </section>
-        <section class="contact-form" id="contacto" style="background:#181818; color:#fff; box-shadow: 0 4px 24px rgba(0,0,0,0.10); border-radius:22px;">
-            <h2 style="color:#FFD600;">Contáctame para trabajar juntos</h2>
-            <form class="form-horizontal">
+        <section class="contact-form" id="contacto">
+            <h2>Contáctame para trabajar juntos</h2>
+            <form class="form-horizontal" autocomplete="off">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="nombre" style="color:#FFD600;">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required style="background:#222; color:#fff; border:1px solid #FFD600;">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required maxlength="100">
                     </div>
                     <div class="form-group">
-                        <label for="telefono" style="color:#FFD600;">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" style="background:#222; color:#fff; border:1px solid #FFD600;">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" maxlength="20">
                     </div>
                     <div class="form-group">
-                        <label for="correo" style="color:#FFD600;">Correo</label>
-                        <input type="email" id="correo" name="correo" required style="background:#222; color:#fff; border:1px solid #FFD600;">
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" name="correo" required maxlength="100">
                     </div>
                 </div>
                 <div class="form-group mensaje-group">
-                    <label for="mensaje" style="color:#FFD600;">¿En qué puedo ayudarte?</label>
-                    <textarea id="mensaje" name="mensaje" rows="6" required 
-    maxlength="500"
-    placeholder="Cuéntame qué necesitas: una página web, una tienda online, una app, o simplemente una idea que quieres desarrollar." 
-    style="background:#222; color:#fff; border:1px solid #FFD600;"></textarea>
+                    <label for="mensaje">¿En qué puedo ayudarte?</label>
+                    <textarea id="mensaje" name="mensaje" rows="6" required maxlength="500"
+                        placeholder="Cuéntame qué necesitas: una página web, una tienda online, una app, o simplemente una idea que quieres desarrollar."></textarea>
                 </div>
-                <button type="submit" style="background:#FFD600; color:#181818; font-weight:700; border:none; border-radius:25px; font-size:1.13rem; padding:0.8rem 2.2rem; margin-top:1.2rem; box-shadow:0 2px 8px rgba(0,0,0,0.13); text-decoration:none; transition:background 0.2s, color 0.2s;">
-                    Enviar mensaje
+                <button type="submit">
+                    <i class="fas fa-paper-plane"></i> Enviar mensaje
                 </button>
+                <div id="form-feedback"></div>
             </form>
         </section>
     </main>
@@ -403,9 +475,37 @@
         document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Envío del formulario
+    // Mostrar certificación por 30 segundos desde menú o botón
+    function showCert() {
+        const cert = document.getElementById('cert-section');
+        cert.style.display = 'block';
+        cert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+            cert.style.display = 'none';
+            if (document.getElementById('show-cert-btn')) {
+                document.getElementById('show-cert-btn').disabled = false;
+            }
+        }, 30000);
+    }
+
+    document.getElementById('show-cert-btn').addEventListener('click', function() {
+        this.disabled = true;
+        showCert();
+    });
+
+    // Enlace del menú para certificación
+    document.querySelector('a[href="#cert-section"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        showCert();
+    });
+
+    // Envío del formulario con feedback visual moderno
     document.querySelector('.contact-form form').addEventListener('submit', async function(e) {
         e.preventDefault();
+
+        const feedback = document.getElementById('form-feedback');
+        feedback.style.display = 'none';
+        feedback.style.color = '#FFD600';
 
         // Validaciones
         const nombre = document.getElementById('nombre').value.trim();
@@ -414,49 +514,54 @@
         const mensaje = document.getElementById('mensaje').value.trim();
 
         if (nombre.length < 2 || nombre.length > 100) {
-            alert('El nombre debe tener entre 2 y 100 caracteres.');
+            feedback.textContent = 'El nombre debe tener entre 2 y 100 caracteres.';
+            feedback.style.color = '#ff4d4f';
+            feedback.style.display = 'block';
             return;
         }
-        // Teléfono: solo números, espacios, +, -, paréntesis, entre 7 y 20 caracteres, sin letras
         if (telefono && (!/^[\d\s\-\+\(\)]{7,20}$/.test(telefono) || /[a-zA-Z]/.test(telefono))) {
-            alert('El teléfono debe tener entre 7 y 20 caracteres y solo puede contener números, espacios, +, -, y paréntesis (sin letras).');
+            feedback.textContent = 'El teléfono debe tener entre 7 y 20 caracteres y solo puede contener números, espacios, +, -, y paréntesis (sin letras).';
+            feedback.style.color = '#ff4d4f';
+            feedback.style.display = 'block';
             return;
         }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo) || correo.length > 100) {
-            alert('Correo inválido o demasiado largo.');
+            feedback.textContent = 'Correo inválido o demasiado largo.';
+            feedback.style.color = '#ff4d4f';
+            feedback.style.display = 'block';
             return;
         }
-        // Mensaje entre 10 y 500 caracteres
         if (mensaje.length < 10 || mensaje.length > 500) {
-            alert('El mensaje debe tener entre 10 y 500 caracteres.');
+            feedback.textContent = 'El mensaje debe tener entre 10 y 500 caracteres.';
+            feedback.style.color = '#ff4d4f';
+            feedback.style.display = 'block';
             return;
         }
 
         const data = { nombre, telefono, correo, mensaje };
 
-        const res = await fetch('https://webpersonal-k04h.onrender.com/api/contacto', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
-        if (res.ok) {
-            alert('¡Mensaje enviado correctamente! Te responderé pronto.');
-            this.reset();
-        } else {
-            alert('Hubo un error al enviar el mensaje.');
-        }
-    });
+        feedback.textContent = 'Enviando mensaje...';
+        feedback.style.color = '#FFD600';
+        feedback.style.display = 'block';
 
-    document.getElementById('show-cert-btn').addEventListener('click', function() {
-        const cert = document.getElementById('cert-section');
-        cert.style.display = 'block';
-        this.disabled = true;
-        // Centrar la pantalla en la certificación
-        cert.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(() => {
-            cert.style.display = 'none';
-            this.disabled = false;
-        }, 30000); // 30 segundos
+        try {
+            const res = await fetch('https://webpersonal-k04h.onrender.com/api/contacto', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (res.ok) {
+                feedback.textContent = '¡Mensaje enviado correctamente! Te responderé pronto.';
+                feedback.style.color = '#00e676';
+                this.reset();
+            } else {
+                feedback.textContent = 'Hubo un error al enviar el mensaje.';
+                feedback.style.color = '#ff4d4f';
+            }
+        } catch {
+            feedback.textContent = 'No se pudo conectar al servidor. Intenta más tarde.';
+            feedback.style.color = '#ff4d4f';
+        }
     });
     </script>
 </body>

@@ -9,3 +9,6 @@ backend/.env
 
 # Ignorar archivos del sistema
 .DS_Store
+
+# Ignorar archivos compilados de TypeScript
+backend/dist/

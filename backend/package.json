@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "start:dev": "nodemon server.js"
+    "start:dev": "nodemon --watch './' --ext ts --exec ts-node server.ts"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +18,13 @@
     "nodemailer": "^7.0.3",
     "pg": "^8.16.2"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.3",
+    "@types/nodemailer": "^6.4.17",
+    "@types/pg": "^8.15.4",
+    "ts-node": "^10.9.2"
+  }
 }
