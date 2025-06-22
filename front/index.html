@@ -414,16 +414,18 @@
             alert('El nombre debe tener entre 2 y 100 caracteres.');
             return;
         }
-        if (telefono.length > 30) {
-            alert('El teléfono no debe superar los 30 caracteres.');
+        // Teléfono: solo números, espacios, +, -, paréntesis, entre 7 y 20 caracteres, sin letras
+        if (telefono && (!/^[\d\s\-\+\(\)]{7,20}$/.test(telefono) || /[a-zA-Z]/.test(telefono))) {
+            alert('El teléfono debe tener entre 7 y 20 caracteres y solo puede contener números, espacios, +, -, y paréntesis (sin letras).');
             return;
         }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo) || correo.length > 100) {
             alert('Correo inválido o demasiado largo.');
             return;
         }
-        if (mensaje.length < 5 || mensaje.length > 1000) {
-            alert('El mensaje debe tener entre 5 y 1000 caracteres.');
+        // Mensaje entre 10 y 500 caracteres
+        if (mensaje.length < 10 || mensaje.length > 500) {
+            alert('El mensaje debe tener entre 10 y 500 caracteres.');
             return;
         }
 
