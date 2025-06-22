@@ -188,107 +188,39 @@
             margin-top: 1.2rem;
             text-align: center;
         }
-        #cert-img {
-            max-width: 95vw;
-            width: 600px;
+        #cert-section img {
+            max-width: 500px;
+            width: 95vw;
             height: auto;
             border-radius: 18px;
             box-shadow: 0 2px 24px rgba(0,0,0,0.25);
-            background: var(--main-white);
+            background: #fff;
             padding: 0.7rem;
-            border: 4px solid var(--main-yellow);
+            border: 4px solid #FFD600;
         }
-        .portfolio {
+        .contact-form {
             background: linear-gradient(135deg, #181818 60%, #FFD600 100%);
             color: #fff;
             box-shadow: 0 4px 24px rgba(0,0,0,0.13);
             border-radius: 22px;
+            max-width: 700px;
+            margin: 2.5rem auto 0 auto;
+            padding: 2.5rem 2rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .portfolio h2 {
+        .contact-form h2 {
             color: #FFD600;
             font-size: 2rem;
             margin-bottom: 1.2rem;
             letter-spacing: 1px;
         }
-        .portfolio-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-size: 1.15rem;
-            color: var(--main-dark);
-            text-decoration: none;
-            font-weight: bold;
-            background: linear-gradient(90deg, #FFD600 0%, #ffef8e 100%);
-            padding: 0.5rem 1.2rem;
-            border-radius: 12px;
-            transition: background 0.2s, color 0.2s, transform 0.2s;
-            margin-top: 0.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.13);
-        }
-        .portfolio-link i {
-            color: var(--main-dark);
-        }
-        .portfolio-link:hover {
-            background: linear-gradient(90deg, var(--main-yellow-light) 0%, var(--main-yellow) 100%);
-            color: var(--main-dark);
-            transform: translateY(-2px) scale(1.04);
-        }
-        .contact-form {
-            background: linear-gradient(135deg, #181818 60%, #FFD600 100%);
-            color: var(--main-white);
-            margin-bottom: 2.5rem;
-        }
-        .contact-form h2 {
-            color: var(--main-yellow);
-            font-size: 2rem;
-            margin-bottom: 1.2rem;
-            letter-spacing: 1px;
-        }
-        .contact-form form {
+        .form-horizontal {
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            width: 100%;
-            backdrop-filter: blur(2px);
-        }
-        .contact-form label {
-            font-weight: bold;
-            margin-bottom: 0.3rem;
-            color: var(--main-yellow);
-        }
-        .contact-form input,
-        .contact-form textarea {
-            padding: 0.7rem;
-            border: 2px solid var(--main-yellow);
-            border-radius: 8px;
-            font-size: 1rem;
-            resize: vertical;
-            background: rgba(34,34,34,0.95);
-            color: var(--main-white);
-            transition: border 0.2s, background 0.2s;
-        }
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border: 2.5px solid var(--main-white);
-            background: #222;
-        }
-        .contact-form button {
-            background: linear-gradient(90deg, var(--main-yellow) 0%, var(--main-yellow-light) 100%);
-            color: var(--main-dark);
-            font-weight: 700;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.13rem;
-            padding: 0.8rem 2.2rem;
-            margin-top: 1.2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.13);
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s, transform 0.2s;
-        }
-        .contact-form button:active {
-            transform: scale(0.97);
         }
         .form-horizontal .form-row {
             display: flex;
@@ -303,6 +235,44 @@
         }
         .form-horizontal .mensaje-group {
             margin-top: 1rem;
+        }
+        .contact-form label {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            color: #FFD600;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.7rem;
+            border: 2px solid #FFD600;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            background: rgba(34,34,34,0.95);
+            color: #fff;
+            transition: border 0.2s, background 0.2s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border: 2.5px solid #fff700;
+            background: #222;
+        }
+        .contact-form button {
+            background: linear-gradient(90deg, #FFD600 0%, #ffef8e 100%);
+            color: #181818;
+            font-weight: 700;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.13rem;
+            padding: 0.8rem 2.2rem;
+            margin-top: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+        .contact-form button:active {
+            transform: scale(0.97);
         }
         #form-feedback {
             margin-top: 1rem;
@@ -343,6 +313,15 @@
             }
             #cert-img {
                 width: 98vw !important;
+                max-width: 98vw !important;
+            }
+            #cert-section > div {
+                flex-direction: column !important;
+                gap: 1.2rem !important;
+                align-items: center !important;
+            }
+            #cert-section img {
+                width: 90vw !important;
                 max-width: 98vw !important;
             }
         }
@@ -425,8 +404,20 @@
                 <i class="fas fa-certificate"></i> Ver Certificación
             </button>
             <div id="cert-section">
-                <img id="cert-img" src="img/certificacion.png" alt="Certificado Henry Full Stack">
-                <div style="color:#fff; margin-top:0.7rem; font-weight:600; font-size:1.15rem;">Certificado Desarrollo Web Full Stack - Henry</div>
+                <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap;">
+                    <div>
+                        <img id="cert-img" src="img/certificacion.png" alt="Certificado Henry Full Stack">
+                        <div style="color:#fff; margin-top:0.7rem; font-weight:600; font-size:1.15rem;">
+                            Certificado Desarrollo Web Full Stack - Henry
+                        </div>
+                    </div>
+                    <div>
+                        <img id="cert-img-js" src="img/javascript.png" alt="Diplomado de JavaScript">
+                        <div style="color:#fff; margin-top:0.7rem; font-weight:600; font-size:1.15rem;">
+                            Diplomado de JavaScript
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="portfolio" id="portfolio" style="background: linear-gradient(135deg, #181818 60%, #FFD600 100%); color: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.13); border-radius: 22px;">
