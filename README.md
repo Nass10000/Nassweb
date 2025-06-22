@@ -12,8 +12,8 @@ El sitio está construido de manera simple, con un frontend estático y un backe
 
 ## 🧰 Tecnologías utilizadas
 
-- **Frontend:** HTML, CSS, JavaScript, TypeScript  
-- **Backend:** Node.js, Express, Nodemailer, PostgreSQL
+- **Frontend:** HTML, CSS, JavaScript  
+- **Backend:** Node.js, Express, TypeScript, Nodemailer, PostgreSQL
 
 ## 🎯 Objetivo
 
