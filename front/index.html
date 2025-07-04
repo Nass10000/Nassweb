@@ -404,7 +404,7 @@
                 <i class="fas fa-certificate"></i> Ver Certificación
             </button>
             <div id="cert-section">
-                <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap;">
+                <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; align-items: flex-start;">
                     <div>
                         <img id="cert-img" src="img/certificacion.png" alt="Certificado Henry Full Stack">
                         <div style="color:#fff; margin-top:0.7rem; font-weight:600; font-size:1.15rem;">
@@ -418,6 +418,12 @@
                         </div>
                     </div>
                 </div>
+                <div style="margin-top:1.5rem;">
+                    <a href="https://www.linkedin.com/in/nassim-wessin-03666b18a" target="_blank" style="display:inline-block; background: linear-gradient(90deg, #FFD600 0%, #ffef8e 100%); color: #181818; font-weight:700; font-size:1.08rem; border-radius: 12px; padding: 0.6rem 1.5rem; text-decoration:none; box-shadow: 0 2px 8px rgba(0,0,0,0.13); transition: background 0.2s, color 0.2s;">
+                        <i class="fab fa-linkedin" style="margin-right:7px;"></i>
+                        Para más información sobre mi preparación, consulta mi LinkedIn
+                    </a>
+                </div>
             </div>
         </section>
         <section class="portfolio" id="portfolio" style="background: linear-gradient(135deg, #181818 60%, #FFD600 100%); color: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.13); border-radius: 22px;">
@@ -429,10 +435,6 @@
                 style="background: linear-gradient(90deg, #FFD600 0%, #ffef8e 100%); color: #181818; border: none; font-weight: 700; font-size: 1.15rem; box-shadow: 0 2px 8px rgba(0,0,0,0.13); transition: transform 0.2s;">
                 <i class="fab fa-github"></i> github.com/Nass10000
             </a>
-           <a class="portfolio-link" href="https://www.linkedin.com/in/nassim-wessin-03666b18a" target="_blank"
-    style="background: linear-gradient(90deg, #FFD600 0%, #ffef8e 100%); color: #181818; border: none; font-weight: 700; font-size: 1.15rem; box-shadow: 0 2px 8px rgba(0,0,0,0.13); transition: transform 0.2s; margin-top: 0.7rem;">
-    <i class="fab fa-linkedin"></i> linkedin.com/in/nassim-wessin-03666b18a
-</a>
         </section>
         <!-- Reemplaza la sección del blog por este bloque más breve y profesional -->
         <section class="blog-experience" id="blog-experience" style="background: linear-gradient(135deg, #FFD600 0%, #232323 100%); color: #181818; box-shadow: 0 4px 24px rgba(0,0,0,0.13); border-radius: 22px; max-width: 700px; margin: 2.5rem auto 0 auto; padding: 1.5rem 2rem 1.3rem 2rem; display: flex; flex-direction: column; align-items: center;">
@@ -627,6 +629,29 @@
             this.style.transform = 'scale(1)';
         });
     });
+
+    // Interacción para el botón de LinkedIn en certificaciones
+    const linkedinBtn = document.querySelector('#cert-section a[href*="linkedin"]');
+    if (linkedinBtn) {
+        linkedinBtn.addEventListener('mouseenter', function() {
+            this.style.background = 'linear-gradient(90deg, #ffef8e 0%, #FFD600 100%)';
+            this.style.color = '#181818';
+            this.style.transform = 'scale(1.05)';
+            this.style.boxShadow = '0 6px 24px rgba(255,214,0,0.18)';
+        });
+        linkedinBtn.addEventListener('mouseleave', function() {
+            this.style.background = 'linear-gradient(90deg, #FFD600 0%, #ffef8e 100%)';
+            this.style.color = '#181818';
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = '0 2px 8px rgba(0,0,0,0.13)';
+        });
+        linkedinBtn.addEventListener('mousedown', function() {
+            this.style.transform = 'scale(0.96)';
+        });
+        linkedinBtn.addEventListener('mouseup', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+    }
     </script>
 </body>
 </html>
