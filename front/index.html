@@ -334,6 +334,10 @@
             <li><a href="#portfolio"><i class="fab fa-github"></i> Portafolio</a></li>
             <li><a href="#cert-section"><i class="fas fa-certificate"></i> Certificación</a></li>
         </ul>
+        <select id="lang-select" style="margin-left:2rem; background: linear-gradient(90deg, #FFD600 0%, #ffef8e 100%); color: #181818; font-weight:700; font-size:1.05rem; border-radius: 12px; padding: 0.5rem 1.3rem; border:none; cursor:pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.13); transition: background 0.2s, color 0.2s;">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+        </select>
     </nav>
     <main>
         <section class="hero">
@@ -346,39 +350,39 @@
                 <i class="fas fa-map-marker-alt"></i> Santo Domingo, RD
             </div>
             <div class="purpose">
-                <span>
+                <span id="purpose-title">
                     <i class="fas fa-lightbulb"></i>
                     ¿Necesitas una página web o un sistema a medida y no sabes por dónde empezar?
                 </span>
-                <span style="font-size:1.07rem; font-weight:400; display:block; margin-bottom:1.1rem;">
+                <span id="purpose-intro" style="font-size:1.07rem; font-weight:400; display:block; margin-bottom:1.1rem;">
                     Soy <b style="font-weight:700;">desarrollador web full stack</b> y me encargo de todo el proceso, desde la parte visual hasta la lógica interna que hace que todo funcione.
                 </span>
                 <ul>
                     <li>
                         <i class="fas fa-bolt"></i>
-                        <span>Páginas rápidas y modernas</span>
+                        <span id="purpose-item1">Páginas rápidas y modernas</span>
                     </li>
                     <li>
                         <i class="fas fa-cogs"></i>
-                        <span>Sistemas personalizados</span>
+                        <span id="purpose-item2">Sistemas personalizados</span>
                     </li>
                     <li>
                         <i class="fas fa-shield-alt"></i>
-                        <span>Seguridad y buen rendimiento garantizado</span>
+                        <span id="purpose-item3">Seguridad y buen rendimiento garantizado</span>
                     </li>
                     <li>
                         <i class="fas fa-handshake"></i>
-                        <span>Asesoría sin tecnicismos</span>
-                        <span style="font-weight:400; margin-left:6px; color:#444;">clara y honesta</span>
+                        <span id="purpose-item4">Asesoría sin tecnicismos</span>
+                        <span id="purpose-item4-sub" style="font-weight:400; margin-left:6px; color:#444;">clara y honesta</span>
                     </li>
                 </ul>
-                <div>
+                <div id="purpose-conclusion">
                     <i class="fas fa-envelope-open-text"></i>
                     Escríbeme y cuéntame lo que necesitas, aunque no sepas explicarlo con palabras técnicas. <b style="font-weight:700;">¡Yo me encargo!</b>
                 </div>
             </div>
             <div style="width:100%; display:flex; flex-direction:column; align-items:center; margin-top:1.5rem;">
-                <h3 style="
+                <h3 id="tech-title" style="
                     color: #181818;
                     background: linear-gradient(90deg, #FFD600 0%, #ffef8e 100%);
                     font-size: 1.45rem;
@@ -452,7 +456,7 @@
             </article>
         </section>
         <section class="contact-form" id="contacto">
-            <h2>Contáctame para trabajar juntos</h2>
+            <h2 id="contact-form-title">Contáctame para trabajar juntos</h2>
             <form class="form-horizontal" autocomplete="off">
                 <div class="form-row">
                     <div class="form-group">
@@ -582,6 +586,233 @@
             feedback.textContent = 'No se pudo conectar al servidor. Intenta más tarde.';
             feedback.style.color = '#ff4d4f';
         }
+    });
+
+    // Traducción español/inglés con select
+    const translations = {
+        es: {
+            contacto: 'Contacto',
+            portafolio: 'Portafolio',
+            certificacion: 'Certificación',
+            verCert: 'Ver Certificación',
+            contratar: '¡Quiero contratarte!',
+            nombre: 'Nombre',
+            telefono: 'Teléfono',
+            correo: 'Correo',
+            mensaje: '¿En qué puedo ayudarte?',
+            placeholderMensaje: 'Cuéntame qué necesitas: una página web, una tienda online, una app, o simplemente una idea que quieres desarrollar.',
+            enviar: 'Enviar mensaje',
+            portafolioDesc: 'Revisa algunos de mis proyectos y colaboraciones en GitHub:',
+            blogTitulo: 'Mi experiencia profesional',
+            blog1: 'Mi recorrido en el desarrollo web ha sido una experiencia enriquecedora, llena de retos y aprendizajes constantes. Aunque la curva de aprendizaje fue exigente al inicio, me permitió adquirir una visión sólida y práctica para abordar proyectos de cualquier complejidad.',
+            blog2: 'Hoy, aplico ese conocimiento para crear soluciones robustas, eficientes y alineadas a las necesidades de cada cliente.',
+            certificadoHenry: 'Certificado Desarrollo Web Full Stack - Henry',
+            certificadoJS: 'Diplomado de JavaScript',
+            linkedinBtn: 'Para más información sobre mi preparación, consulta mi LinkedIn',
+            copyright: '2025 Nassim Wessin Hazim — Todos los derechos reservados.',
+            copyright2: 'Desarrollado con pasión y profesionalismo.',
+            // Textos de la sección purpose
+            purposeTitle: '¿Necesitas una página web o un sistema a medida y no sabes por dónde empezar?',
+            purposeIntro: 'Soy <b style="font-weight:700;">desarrollador web full stack</b> y me encargo de todo el proceso, desde la parte visual hasta la lógica interna que hace que todo funcione.',
+            purposeItem1: 'Páginas rápidas y modernas',
+            purposeItem2: 'Sistemas personalizados',
+            purposeItem3: 'Seguridad y buen rendimiento garantizado',
+            purposeItem4: 'Asesoría sin tecnicismos',
+            purposeItem4Sub: 'clara y honesta',
+            purposeConclusion: 'Escríbeme y cuéntame lo que necesitas, aunque no sepas explicarlo con palabras técnicas. <b style="font-weight:700;">¡Yo me encargo!</b>',
+            techTitle: 'Tecnologías que uso',
+            contactFormTitle: 'Contáctame para trabajar juntos'
+        },
+        en: {
+            contacto: 'Contact',
+            portafolio: 'Portfolio',
+            certificacion: 'Certification',
+            verCert: 'View Certification',
+            contratar: 'Hire Me!',
+            nombre: 'Name',
+            telefono: 'Phone',
+            correo: 'Email',
+            mensaje: 'How can I help you?',
+            placeholderMensaje: 'Tell me what you need: a website, an online store, an app, or just an idea you want to develop.',
+            enviar: 'Send Message',
+            portafolioDesc: 'Check out some of my projects and collaborations on GitHub:',
+            blogTitulo: 'My Professional Experience',
+            blog1: 'My journey in web development has been enriching, full of challenges and constant learning. Although the learning curve was demanding at first, it gave me a solid and practical vision to tackle projects of any complexity.',
+            blog2: 'Today, I use that knowledge to create robust, efficient solutions tailored to each client\'s needs.',
+            certificadoHenry: 'Full Stack Web Development Certificate - Henry',
+            certificadoJS: 'JavaScript Diploma',
+            linkedinBtn: 'For more information about my background, visit my LinkedIn',
+            copyright: '2025 Nassim Wessin Hazim — All rights reserved.',
+            copyright2: 'Developed with passion and professionalism.',
+            // Textos de la sección purpose
+            purposeTitle: 'Do you need a custom website or system and don\'t know where to start?',
+            purposeIntro: 'I\'m a <b style="font-weight:700;">full stack web developer</b> and I handle the entire process, from the visual part to the internal logic that makes everything work.',
+            purposeItem1: 'Fast and modern websites',
+            purposeItem2: 'Custom systems',
+            purposeItem3: 'Security and guaranteed performance',
+            purposeItem4: 'Advice without jargon',
+            purposeItem4Sub: 'clear and honest',
+            purposeConclusion: 'Write to me and tell me what you need, even if you don\'t know how to explain it in technical terms. <b style="font-weight:700;">I\'ll take care of it!</b>',
+            techTitle: 'Technologies I use',
+            contactFormTitle: 'Contact me to work together'
+        }
+    };
+    let lang = 'es';
+    const langSelect = document.getElementById('lang-select');
+    
+    // Función para aplicar traducciones
+    function applyTranslations(lang) {
+        console.log('Aplicando traducciones para idioma:', lang);
+        
+        try {
+            // Nav
+            const navLinks = document.querySelectorAll('nav ul li a');
+            if (navLinks.length >= 3) {
+                navLinks[0].innerHTML = `<i class='fas fa-envelope'></i> ${translations[lang].contacto}`;
+                navLinks[1].innerHTML = `<i class='fab fa-github'></i> ${translations[lang].portafolio}`;
+                navLinks[2].innerHTML = `<i class='fas fa-certificate'></i> ${translations[lang].certificacion}`;
+            }
+            
+            // Botón cert
+            const certBtn = document.getElementById('show-cert-btn');
+            if (certBtn) certBtn.innerHTML = `<i class='fas fa-certificate'></i> ${translations[lang].verCert}`;
+            
+            // Botón contratar
+            const contractBtn = document.querySelector('.contact-btn');
+            if (contractBtn) contractBtn.innerHTML = `<i class='fas fa-paper-plane'></i> ${translations[lang].contratar}`;
+            
+            // Sección Purpose (Propósito) - Debug
+            console.log('Traduciendo sección purpose...');
+            const purposeTitle = document.getElementById('purpose-title');
+            if (purposeTitle) {
+                console.log('Elemento purpose-title encontrado, texto actual:', purposeTitle.textContent);
+                purposeTitle.innerHTML = `<i class="fas fa-lightbulb"></i> ${translations[lang].purposeTitle}`;
+                console.log('Nuevo texto:', purposeTitle.textContent);
+            } else {
+                console.log('ERROR: Elemento purpose-title NO encontrado');
+            }
+            
+            const purposeIntro = document.getElementById('purpose-intro');
+            if (purposeIntro) {
+                console.log('Elemento purpose-intro encontrado');
+                purposeIntro.innerHTML = translations[lang].purposeIntro;
+            } else {
+                console.log('ERROR: Elemento purpose-intro NO encontrado');
+            }
+            
+            const purposeItem1 = document.getElementById('purpose-item1');
+            if (purposeItem1) {
+                console.log('Elemento purpose-item1 encontrado');
+                purposeItem1.textContent = translations[lang].purposeItem1;
+            } else {
+                console.log('ERROR: Elemento purpose-item1 NO encontrado');
+            }
+            
+            const purposeItem2 = document.getElementById('purpose-item2');
+            if (purposeItem2) {
+                purposeItem2.textContent = translations[lang].purposeItem2;
+            }
+            
+            const purposeItem3 = document.getElementById('purpose-item3');
+            if (purposeItem3) {
+                purposeItem3.textContent = translations[lang].purposeItem3;
+            }
+            
+            const purposeItem4 = document.getElementById('purpose-item4');
+            if (purposeItem4) {
+                purposeItem4.textContent = translations[lang].purposeItem4;
+            }
+            
+            const purposeItem4Sub = document.getElementById('purpose-item4-sub');
+            if (purposeItem4Sub) {
+                purposeItem4Sub.textContent = translations[lang].purposeItem4Sub;
+            }
+            
+            const purposeConclusion = document.getElementById('purpose-conclusion');
+            if (purposeConclusion) {
+                console.log('Elemento purpose-conclusion encontrado');
+                purposeConclusion.innerHTML = `<i class="fas fa-envelope-open-text"></i> ${translations[lang].purposeConclusion}`;
+            } else {
+                console.log('ERROR: Elemento purpose-conclusion NO encontrado');
+            }
+            
+            const techTitle = document.getElementById('tech-title');
+            if (techTitle) {
+                console.log('Elemento tech-title encontrado');
+                techTitle.innerHTML = `<i class="fas fa-laptop-code" style="margin-right:10px; color:#181818;"></i> ${translations[lang].techTitle}`;
+            } else {
+                console.log('ERROR: Elemento tech-title NO encontrado');
+            }
+            
+            // Formulario
+            const nombreLabel = document.querySelector('label[for="nombre"]');
+            if (nombreLabel) nombreLabel.textContent = translations[lang].nombre;
+            
+            const telefonoLabel = document.querySelector('label[for="telefono"]');
+            if (telefonoLabel) telefonoLabel.textContent = translations[lang].telefono;
+            
+            const correoLabel = document.querySelector('label[for="correo"]');
+            if (correoLabel) correoLabel.textContent = translations[lang].correo;
+            
+            const mensajeLabel = document.querySelector('label[for="mensaje"]');
+            if (mensajeLabel) mensajeLabel.textContent = translations[lang].mensaje;
+            
+            const mensajeTextarea = document.getElementById('mensaje');
+            if (mensajeTextarea) mensajeTextarea.placeholder = translations[lang].placeholderMensaje;
+            
+            const submitBtn = document.querySelector('.contact-form button');
+            if (submitBtn) submitBtn.innerHTML = `<i class='fas fa-paper-plane'></i> ${translations[lang].enviar}`;
+            
+            const contactFormTitle = document.getElementById('contact-form-title');
+            if (contactFormTitle) contactFormTitle.textContent = translations[lang].contactFormTitle;
+            
+            // Portafolio
+            const portfolioH2 = document.querySelector('#portfolio h2');
+            if (portfolioH2) portfolioH2.innerHTML = `<i class='fas fa-folder-open'></i> ${translations[lang].portafolio}`;
+            
+            const portfolioDesc = document.querySelector('#portfolio p');
+            if (portfolioDesc) portfolioDesc.textContent = translations[lang].portafolioDesc;
+            
+            // Blog
+            const blogH2 = document.querySelector('.blog-experience h2');
+            if (blogH2) blogH2.innerHTML = `<i class='fas fa-book-open' style='color:#FFD600; margin-right:10px;'></i> ${translations[lang].blogTitulo}`;
+            
+            const blog1 = document.querySelector('.blog-experience article p:nth-child(1)');
+            if (blog1) blog1.textContent = translations[lang].blog1;
+            
+            const blog2 = document.querySelector('.blog-experience article p:nth-child(2)');
+            if (blog2) blog2.textContent = translations[lang].blog2;
+            
+            // Certificaciones
+            const certHenry = document.querySelector('#cert-img');
+            if (certHenry && certHenry.nextElementSibling) {
+                certHenry.nextElementSibling.textContent = translations[lang].certificadoHenry;
+            }
+            
+            const certJS = document.querySelector('#cert-img-js');
+            if (certJS && certJS.nextElementSibling) {
+                certJS.nextElementSibling.textContent = translations[lang].certificadoJS;
+            }
+            
+            const linkedinLink = document.querySelector('#cert-section a');
+            if (linkedinLink) linkedinLink.innerHTML = `<i class='fab fa-linkedin' style='margin-right:7px;'></i> ${translations[lang].linkedinBtn}`;
+            
+            // Footer
+            const footerSpan = document.querySelector('footer span');
+            if (footerSpan) footerSpan.innerHTML = `<i class='fas fa-copyright' style='font-size:1.2rem;'></i> ${translations[lang].copyright}`;
+            
+            const footerSpan2 = document.querySelector('footer span + br + span');
+            if (footerSpan2) footerSpan2.textContent = translations[lang].copyright2;
+            
+        } catch (error) {
+            console.error('Error en traducción:', error);
+        }
+    }
+    
+    langSelect.addEventListener('change', function() {
+        lang = this.value;
+        console.log('Cambiando idioma a:', lang);
+        applyTranslations(lang);
     });
 
     // Animación de entrada para las secciones
